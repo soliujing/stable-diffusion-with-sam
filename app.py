@@ -7,7 +7,7 @@ from segment_anything import SamPredictor, sam_model_registry
 
 MODEL_CHECKPOINT = './weights/sam_vit_h_4b8939.pth'
 MODEL_TYPE = 'vit_h'
-DEVICE = 'cpu'
+DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 selected_pixels = []
 
